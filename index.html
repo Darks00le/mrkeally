@@ -3,73 +3,45 @@ hello<b> this is my first website </b><h1>welcome to the homepage of darraghs ip
 <html>
 <head>
   <style>
-    .menu-container {
+    .dropdown {
       position: relative;
       display: inline-block;
     }
 
-    .menu-button {
-      background-color: #f2f2f2;
-      padding: 10px 20px;
-      cursor: pointer;
-    }
-
-    .popup-menu {
+    .dropdown-content {
+      display: none;
       position: absolute;
       top: 100%;
-      left: 0;
       background-color: #f2f2f2;
+      min-width: 200px;
       padding: 10px;
-      display: none;
     }
 
-    .menu-item {
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .sublink {
+      display: block;
       padding: 5px;
       cursor: pointer;
-    }
-
-    .submenu {
-      display: none;
-      margin-left: 20px;
-    }
-
-    .submenu .menu-item {
-      padding-left: 10px;
+      text-decoration: none;
+      color: black;
     }
   </style>
 </head>
 <body>
-  <div class="menu-container">
-    <div class="menu-button" onclick="toggleMenu()">Menu</div>
-    <div class="popup-menu" id="popupMenu">
-      <div class="menu-item" onclick="toggleSubmenu('submenu1')">Submenu 1</div>
-      <div class="submenu" id="submenu1">
-        <div class="menu-item">Sublink 1</div>
-        <div class="menu-item">Sublink 2</div>
-        <div class="menu-item">Sublink 3</div>
-      </div>
-      <div class="menu-item" onclick="toggleSubmenu('submenu2')">Submenu 2</div>
-      <div class="submenu" id="submenu2">
-        <div class="menu-item">Sublink 4</div>
-        <div class="menu-item">Sublink 5</div>
-        <div class="menu-item">Sublink 6</div>
-      </div>
+  <div class="dropdown">
+    <span>Menu</span>
+    <div class="dropdown-content">
+      <a href="sublink1.html" class="sublink">Sublink 1</a>
+      <a href="sublink2.html" class="sublink">Sublink 2</a>
+      <a href="sublink3.html" class="sublink">Sublink 3</a>
     </div>
   </div>
-
-  <script>
-    function toggleMenu() {
-      var popupMenu = document.getElementById("popupMenu");
-      popupMenu.style.display = (popupMenu.style.display === "block") ? "none" : "block";
-    }
-
-    function toggleSubmenu(submenuId) {
-      var submenu = document.getElementById(submenuId);
-      submenu.style.display = (submenu.style.display === "block") ? "none" : "block";
-    }
-  </script>
 </body>
 </html>
+
 
 
 
