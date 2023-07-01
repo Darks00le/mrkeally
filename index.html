@@ -2,39 +2,19 @@
 <html>
 <head>
   <style>
-    .popup {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
+    .banner {
       background-color: #f2f2f2;
+      color: #333;
       padding: 20px;
       text-align: center;
       font-size: 18px;
     }
-
-    .close-button {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 16px;
-      color: #888;
-      cursor: pointer;
-    }
   </style>
 </head>
 <body>
-  <div class="popup">
-    <span class="close-button" onclick="closePopup()">&times;</span>
-    <p>Welcome to the IPO, aka Interesting Platform Oasis!</p>
+  <div class="banner">
+    <p>Welcome to the IPO, aka Interesting Platform Oasis</p>
   </div>
-
-  <script>
-    function closePopup() {
-      var popup = document.querySelector('.popup');
-      popup.style.display = 'none';
-    }
-  </script>
 </body>
 </html>
 
