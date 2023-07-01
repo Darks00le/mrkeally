@@ -95,10 +95,8 @@ hello<b> this is my first website </b><h1>welcome to the homepage of darraghs ip
     <button onclick="sendMessage()">Send</button>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/@openai/api@1.0.0/dist/openai-api.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script>
-    const openai = new OpenAI(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);
-
     function appendMessageToChat(message) {
       const chatMessages = document.getElementById("chatMessages");
       const newMessage = document.createElement("p");
@@ -115,16 +113,19 @@ hello<b> this is my first website </b><h1>welcome to the homepage of darraghs ip
         messageInput.value = "";
 
         try {
-          const response = await openai.complete({
-            engine: 'text-davinci-003',
-            prompt: 'User: ' + message + '\nBot:',
-            maxTokens: 50,
-            temperature: 0.6,
-            n: 1,
-            stop: '\n'
+          const response = await axios.post("https://api.openai.com/v1/chat/completions", {
+            messages: [
+              { role: "system", content: "You are a helpful assistant." },
+              { role: "user", content: message }
+            ]
+          }, {
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization": "Bearer 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"
+            }
           });
 
-          const botMessage = response.data.choices[0].text.trim();
+          const botMessage = response.data.choices[0].message.content;
           appendMessageToChat("Bot: " + botMessage);
         } catch (error) {
           console.error("Error:", error);
