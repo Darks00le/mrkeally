@@ -18,6 +18,47 @@ hello<b> this is my first website </b><h1>welcome to the homepage of darraghs ip
 <h7>thx to erin for helping with button ideas</h7>
 
 <a href ="family homepage.html">fam
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 300px;
+      background-color: #f2f2f2;
+      border: 1px solid #ccc;
+      padding: 20px;
+      display: none;
+    }
+    
+    .popup a {
+      display: block;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="openPopup()">Open Popup</button>
+
+  <div class="popup" id="myPopup">
+    <a href="edits.html">Sublink 1</a>
+    <a href="#">Sublink 2</a>
+    <a href="#">Sublink 3</a>
+    <a href="#">Sublink 4</a>
+  </div>
+
+  <script>
+    function openPopup() {
+      var popup = document.getElementById("myPopup");
+      popup.style.display = "block";
+    }
+  </script>
+</body>
+</html>
 
 
 <!--<h1>READ THIS!!!</h1><img src="images/epilpsy warning.png"> /* im leaving this code unactive until i find a place for it */ -->
