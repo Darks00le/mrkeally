@@ -25,16 +25,35 @@ hello<b> this is my first website </b><h1>welcome to the homepage of darraghs ip
 
     .menu-item {
       padding: 5px;
+      cursor: pointer;
+    }
+
+    .submenu {
+      display: none;
+      margin-left: 20px;
+    }
+
+    .submenu .menu-item {
+      padding-left: 10px;
     }
   </style>
 </head>
 <body>
   <div class="menu-container">
-    <div class="menu-button" onclick="toggleMenu()">Open Menu</div>
+    <div class="menu-button" onclick="toggleMenu()">Menu</div>
     <div class="popup-menu" id="popupMenu">
-      <div class="menu-item">Item 1</div>
-      <div class="menu-item">Item 2</div>
-      <div class="menu-item">Item 3</div>
+      <div class="menu-item" onclick="toggleSubmenu('submenu1')">Submenu 1</div>
+      <div class="submenu" id="submenu1">
+        <div class="menu-item">Sublink 1</div>
+        <div class="menu-item">Sublink 2</div>
+        <div class="menu-item">Sublink 3</div>
+      </div>
+      <div class="menu-item" onclick="toggleSubmenu('submenu2')">Submenu 2</div>
+      <div class="submenu" id="submenu2">
+        <div class="menu-item">Sublink 4</div>
+        <div class="menu-item">Sublink 5</div>
+        <div class="menu-item">Sublink 6</div>
+      </div>
     </div>
   </div>
 
@@ -43,9 +62,15 @@ hello<b> this is my first website </b><h1>welcome to the homepage of darraghs ip
       var popupMenu = document.getElementById("popupMenu");
       popupMenu.style.display = (popupMenu.style.display === "block") ? "none" : "block";
     }
+
+    function toggleSubmenu(submenuId) {
+      var submenu = document.getElementById(submenuId);
+      submenu.style.display = (submenu.style.display === "block") ? "none" : "block";
+    }
   </script>
 </body>
 </html>
+
 
 
 
