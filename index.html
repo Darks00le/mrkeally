@@ -63,6 +63,77 @@ hello<b> this is my first website </b><h1>welcome to the homepage of darraghs ip
 <! <h7>thx to erin for helping with button ideas</h7> 
 
  <a href ="family homepage.html">fam > */ -->
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .chat-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      height: 400px;
+      background-color: #f2f2f2;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .chat-messages {
+      height: 300px;
+      overflow-y: scroll;
+    }
+
+    .chat-input {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-messages" id="chatMessages"></div>
+    <input type="text" class="chat-input" id="chatInput" placeholder="Type your message..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@openai/api@1.0.0/dist/openai-api.min.js"></script>
+  <script>
+    const openai = new OpenAI(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);
+
+    function appendMessageToChat(message) {
+      const chatMessages = document.getElementById("chatMessages");
+      const newMessage = document.createElement("p");
+      newMessage.textContent = message;
+      chatMessages.appendChild(newMessage);
+    }
+
+    async function sendMessage() {
+      const messageInput = document.getElementById("chatInput");
+      const message = messageInput.value.trim();
+
+      if (message !== "") {
+        appendMessageToChat("User: " + message);
+        messageInput.value = "";
+
+        try {
+          const response = await openai.complete({
+            engine: 'text-davinci-003',
+            prompt: 'User: ' + message + '\nBot:',
+            maxTokens: 50,
+            temperature: 0.6,
+            n: 1,
+            stop: '\n'
+          });
+
+          const botMessage = response.data.choices[0].text.trim();
+          appendMessageToChat("Bot: " + botMessage);
+        } catch (error) {
+          console.error("Error:", error);
+        }
+      }
+    }
+  </script>
+</body>
+</html>
 
 
 
