@@ -7,47 +7,37 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 100px;
       background-color: #f2f2f2;
-      padding: 10px;
+      padding: 20px;
       text-align: center;
-      display: none;
-    }
-
-    .popup-content {
-      margin-top: 20px;
+      font-size: 18px;
     }
 
     .close-button {
       position: absolute;
       top: 10px;
-      right: 10px;
+      right: 20px;
+      font-size: 16px;
+      color: #888;
       cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <div class="popup" id="popup">
+  <div class="popup">
     <span class="close-button" onclick="closePopup()">&times;</span>
-    <div class="popup-content">
-      <h3>Welcome to the Website!</h3>
-      <p>welcome to ipo aka Interesting Platform Oasis</p>
-    </div>
+    <p>Welcome to the IPO, aka Interesting Platform Oasis!</p>
   </div>
 
   <script>
-    window.addEventListener("DOMContentLoaded", function() {
-      var popup = document.getElementById("popup");
-      popup.style.display = "block";
-    });
-
     function closePopup() {
-      var popup = document.getElementById("popup");
-      popup.style.display = "none";
+      var popup = document.querySelector('.popup');
+      popup.style.display = 'none';
     }
   </script>
 </body>
 </html>
+
 
 <!DOCTYPE html>
 <html>
