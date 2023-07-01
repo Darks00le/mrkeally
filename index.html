@@ -2,44 +2,43 @@
 <html>
 <head>
   <style>
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 300px;
       background-color: #f2f2f2;
-      min-width: 200px;
-      padding: 10px;
+      border: 1px solid #ccc;
+      padding: 20px;
+      display: none;
     }
-
-    .dropdown:hover .dropdown-content {
+    
+    .popup a {
       display: block;
-    }
-
-    .sublink {
-      display: block;
-      padding: 5px;
-      cursor: pointer;
-      text-decoration: none;
-      color: black;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
-  <div class="dropdown">
-    <span>Menu</span>
-    <div class="dropdown-content">
-      <a href="amazing edits.html" class="sublink">Sublink 1</a>
-      <a href="products.html" class="sublink">Sublink 2</a>
-      <a href="sublink3.html" class="sublink">Sublink 3</a>
-    </div>
+  <button onclick="openPopup()">Open Popup</button>
+
+  <div class="popup" id="myPopup">
+    <a href="amazing edits.html">edits</a>
+    <a href="products.html">porducts</a>
+  
   </div>
+
+  <script>
+    function openPopup() {
+      var popup = document.getElementById("myPopup");
+      popup.style.display = "block";
+    }
+  </script>
 </body>
 </html>
+
 
 
 hello<b> this is my first website </b><h1>welcome to the homepage of darraghs ipo</h1> <!DOCTYPE html>
