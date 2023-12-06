@@ -19,28 +19,37 @@ hello<b>here you can view prices and website updates </b><h1>welcome to the buye
 <body background="images/bgb (1).jpg">
 </body>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Submission Form</title>
-</head>
+
 <body>
-
-    <h1>User Submission Form</h1>
-
-    <form action="submit.php" method="post">
-        <label for="userInput">Enter something:</label>
-        <input type="text" id="userInput" name="userInput" required>
-        <br>
-        <input type="submit" value="Submit">
-    </form>
-
+  
+<form
+  action="https://formspree.io/f/meqbyelw"
+  method="POST"
+>
+    <label>
+        your first name:
+        <textarea name="message"></textarea>
+    </label>
+    <label>
+        your last name:
+        <textarea name="message"></textarea>
+    </label>
+  <label>
+    Your email:
+    <input type="email" name="email">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
+    <label>
+        your estimate price:
+        <textarea name="message"></textarea>
+    </label>
+  <!-- your other form fields go here -->
+  <button type="submit">Send</button>
+</form>
 </body>
-</html>
-
-
 
 
 <!--<h1>READ THIS!!!</h1><img src="images/epilpsy warning.png"> /* im leaving this code unactive until i find a place for it */ -->
