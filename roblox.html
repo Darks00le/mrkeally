@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule 🥔 Hub</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 { color: #333; }
+        .btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 24px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn:hover { background-color: #0056b3; }
+        .copy-btn { background-color: #28a745; }
+        .copy-btn:hover { background-color: #218838; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Schedule 🥔</h1>
+    <p>Click below to play the game or copy your friend seed.</p>
+    
+    <a href="https://www.roblox.com/share?code=6a025f5112840b4a83a635957decc5e8&type=ExperienceDetails&stamp=1784485618323" 
+       target="_blank" class="btn">Play Game</a>
+    
+    <button class="btn copy-btn" onclick="copySeed()">Copy Friend Seed</button>
+    <p id="status"></p>
+</div>
+
+<script>
+    function copySeed() {
+        const seed = "Wrycn11MVT";
+        navigator.clipboard.writeText(seed).then(() => {
+            const status = document.getElementById('status');
+            status.innerText = "Seed copied to clipboard!";
+            setTimeout(() => status.innerText = "", 2000);
+        });
+    }
+</script>
+
+</body>
+</html>
